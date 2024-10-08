@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login - Employee Management System</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
+    <style>
+      body {
+        background-color: #ffffff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+      }
+      .login-container {
+        background-color: #0059b3;
+        padding: 30px;
+        border-radius: 10px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        width: 400px;
+        color: white;
+      }
+      .login-container h2 {
+        text-align: center;
+        margin-bottom: 20px;
+      }
+      .form-control {
+        background-color: #ffffff;
+        border: none;
+        border-radius: 5px;
+        color: #333;
+      }
+      .form-control:focus {
+        box-shadow: none;
+        border-color: #0059b3;
+      }
+      .btn-login {
+        background-color: #ffffff;
+        color: #0059b3;
+        border-radius: 5px;
+        font-weight: bold;
+      }
+      .btn-login:hover {
+        background-color: #e7e7e7;
+      }
+      .footer {
+        text-align: center;
+        margin-top: 20px;
+        color: white;
+      }
+    </style>
+    <script>
+      function redirectToDashboard(event) {
+        event.preventDefault(); // Prevent the form from submitting
+
+        // Get email input
+        const email = document.getElementById("email").value;
+        const password = document.getElementById("password").value;
+
+        // Simple validation (add your own logic)
+        if (email === "admin@example.com" && password === "admin123") {
+          // Redirect to admin page
+          window.location.href = "admin.html";
+        } else {
+          // Redirect to employee dashboard
+          window.location.href = "employee.html";
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <div class="login-container">
+      <h2>Login</h2>
+      <form onsubmit="redirectToDashboard(event)">
+        <div class="form-group">
+          <label for="email">Email Address</label>
+          <input
+            type="email"
+            class="form-control"
+            id="email"
+            placeholder="Enter your email"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input
+            type="password"
+            class="form-control"
+            id="password"
+            placeholder="Enter your password"
+            required
+          />
+        </div>
+        <button type="submit" class="btn btn-login btn-block">Login</button>
+      </form>
+      <div class="footer">
+        <p>© 2024 Employee Management System</p>
+      </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  </body>
+</html>

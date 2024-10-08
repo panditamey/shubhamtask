@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Employee Management System - Employee Dashboard</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
+
+    <style>
+      body,
+      html {
+        height: 100%;
+        margin: 0;
+      }
+
+      .wrapper {
+        display: flex;
+      }
+
+      /* Sidebar Styles */
+      .sidebar {
+        height: 100vh;
+        width: 250px;
+        background: linear-gradient(to bottom, #003366, #004080);
+        color: white;
+        padding-top: 20px;
+        position: fixed;
+        transition: transform 0.3s ease;
+        transform: translateX(0);
+      }
+
+      .sidebar.closed {
+        transform: translateX(-100%);
+      }
+
+      /* Main Content Styles */
+      .main-content {
+        transition: margin-left 0.3s ease;
+        margin-left: 250px;
+        padding: 20px;
+        flex-grow: 1;
+      }
+
+      .main-content.expanded {
+        margin-left: 0;
+      }
+
+      .sidebar-header {
+        text-align: center;
+        padding: 15px;
+      }
+
+      .sidebar a {
+        text-decoration: none;
+        color: white;
+        padding: 15px 20px;
+        display: flex;
+        align-items: center;
+      }
+
+      .sidebar a:hover {
+        background: #0059b3;
+      }
+
+      .sidebar i {
+        margin-right: 10px;
+      }
+
+      /* Navbar and Other Styles */
+      .custom-navbar {
+        background-color: #003366;
+        border-radius: 0 0 10px 10px;
+      }
+
+      .card {
+        margin-top: 20px;
+        border-radius: 15px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrapper">
+      <!-- Sidebar -->
+      <div class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+          <h4>Employee Dashboard</h4>
+        </div>
+        <a href="#personal-info"
+          ><i class="fas fa-user-circle"></i> <span>Personal Info</span></a
+        >
+        <a href="#professional-info"
+          ><i class="fas fa-briefcase"></i> <span>Professional Info</span></a
+        >
+        <a href="#project-details"
+          ><i class="fas fa-tasks"></i> <span>Project Details</span></a
+        >
+        <a href="#finance-details"
+          ><i class="fas fa-wallet"></i> <span>Finance Details</span></a
+        >
+        <a href="#download-payslips"
+          ><i class="fas fa-file-download"></i>
+          <span>Download Payslips</span></a
+        >
+      </div>
+
+      <!-- Main Content -->
+      <div class="main-content" id="mainContent">
+        <nav class="navbar navbar-expand-lg navbar-dark custom-navbar">
+          <div class="container-fluid">
+            <button class="btn btn-toggle" id="toggleSidebar">
+              <i class="fas fa-bars"></i>
+            </button>
+            <a class="navbar-brand" href="#">Welcome, Employee</a>
+            <div class="collapse navbar-collapse" id="navbarNav">
+              <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                  <a class="nav-link" href="#"
+                    ><i class="fas fa-user"></i> Profile</a
+                  >
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#"
+                    ><i class="fas fa-sign-out-alt"></i> Logout</a
+                  >
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+
+        <!-- Personal Information -->
+        <div class="card mt-4" id="personal-info">
+          <div class="card-header">Personal Information</div>
+          <div class="card-body">
+            <p><strong>Full Name:</strong> Shubham Dhopat</p>
+            <p><strong>Date of Birth:</strong> 1998-04-23</p>
+            <p><strong>Gender:</strong> Male</p>
+            <p><strong>Current Address:</strong> 1234, Sample Street, Pune</p>
+            <p>
+              <strong>Permanent Address:</strong> 5678, Sample Avenue, Mumbai
+            </p>
+            <p><strong>Mobile Number:</strong> +91-9876543210</p>
+            <p><strong>Emergency Contact:</strong> +91-9123456789</p>
+          </div>
+        </div>
+
+        <!-- Professional Information -->
+        <div class="card mt-4" id="professional-info">
+          <div class="card-header">Professional Information</div>
+          <div class="card-body">
+            <p><strong>Employee Code:</strong> 123456</p>
+            <p><strong>Company Email:</strong> shubham@example.com</p>
+            <p><strong>Office Phone:</strong> 020-12345678</p>
+            <p><strong>Reporting Manager:</strong> Sahil Verma</p>
+            <p><strong>Date of Joining:</strong> 2021-05-01</p>
+            <p>
+              <strong>Employment History:</strong> Previous: XYZ Ltd (2018-2021)
+            </p>
+          </div>
+        </div>
+
+        <!-- Project Details -->
+        <div class="card mt-4" id="project-details">
+          <div class="card-header">Project Information</div>
+          <div class="card-body">
+            <p><strong>Current Project:</strong> Project Alpha</p>
+            <p><strong>Client:</strong> ABC Corp</p>
+            <p><strong>Start Date:</strong> 2021-06-01</p>
+            <p><strong>End Date:</strong> Ongoing</p>
+            <p><strong>Previous Project:</strong> Project Beta (2020-2021)</p>
+          </div>
+        </div>
+
+        <!-- Finance Information -->
+        <div class="card mt-4 mb-4" id="finance-details">
+          <div class="card-header">Finance Information</div>
+          <div class="card-body">
+            <p><strong>PAN Card:</strong> ABCDE1234F</p>
+            <p><strong>Aadhar Card:</strong> 1234 5678 9101</p>
+            <p><strong>Bank Name:</strong> State Bank of India</p>
+            <p><strong>Branch:</strong> Pune Branch</p>
+            <p><strong>IFSC Code:</strong> SBIN0001234</p>
+            <button class="btn btn-primary">
+              Download Last 6 Months Payslips
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
